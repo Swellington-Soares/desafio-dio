@@ -7,10 +7,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class TaskApplication extends Application {
+
+
+    public static URL getResource(@NotNull String path) {
+        return TaskApplication.class.getResource(path);
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -29,7 +36,8 @@ public class TaskApplication extends Application {
             try {
                 splashStage.close();
                 showMainStage(stage);
-            } catch (IOException ignored) {}
+            } catch (IOException ignored) {
+            }
         });
 
         controller.startLoading();
@@ -45,4 +53,6 @@ public class TaskApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
+
 }
