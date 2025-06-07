@@ -1,14 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="dev.swell.desafiodio.ui.view.AddTaskView"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox fx:id="root" prefHeight="446.0" prefWidth="645.0" stylesheets="@../../../../../asserts/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.swell.desafiodio.presentation.controller.AddTaskViewController">
+   <children>
+      <VBox prefHeight="58.0" prefWidth="342.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título" />
+            <TextField fx:id="textFieldTitle" prefHeight="26.0" prefWidth="306.0" />
+            <Text fx:id="textTitleError" fill="#f70505" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" wrappingWidth="306.4" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="16.0" />
+         </VBox.margin>
+      </VBox>
+      <VBox prefHeight="128.0" prefWidth="614.0">
+         <children>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição" />
+                  <Text fx:id="textDescriptionCount" strokeType="OUTSIDE" strokeWidth="0.0" text="0/1500" textAlignment="RIGHT" wrappingWidth="559.2000579833984" />
+               </children>
+            </HBox>
+            <TextArea fx:id="textAreaDescription" prefHeight="93.0" prefWidth="614.0" />
+            <Text fx:id="textDescriptionError" fill="#f70505" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" wrappingWidth="306.4" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="16.0" />
+         </VBox.margin>
+      </VBox>
+      <HBox>
+         <children>
+            <VBox prefHeight="60.0" prefWidth="306.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data de inicio" />
+                  <DatePicker fx:id="datePickerStartTask" prefHeight="26.0" prefWidth="162.0" />
+                  <Text fx:id="datePickerTaskStartError" fill="#f70505" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" wrappingWidth="306.4" />
+               </children>
+            </VBox>
+            <VBox maxHeight="100.0" maxWidth="1.7976931348623157E308" prefHeight="60.0" prefWidth="245.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data de finalização" />
+                  <DatePicker fx:id="datePickerFinishTask" prefHeight="26.0" prefWidth="162.0" />
+                  <Text fx:id="datePickerTextFinishError" fill="#f70505" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" wrappingWidth="306.4" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Situação" />
+            <ComboBox fx:id="comboBoxTaskState" prefWidth="150.0" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="16.0" top="16.0" />
+         </VBox.margin>
+      </VBox>
+      <HBox spacing="16.0" VBox.vgrow="SOMETIMES">
+         <VBox.margin>
+            <Insets top="16.0" />
+         </VBox.margin>
+         <children>
+            <Button mnemonicParsing="false" onAction="#cadastrarButtonAction" prefHeight="25.0" prefWidth="112.0" text="CONFIRMAR">
+               <styleClass>
+                  <String fx:value="confirm-button" />
+                  <String fx:value="button" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="25.0" prefWidth="112.0" text="CANCELAR">
+               <styleClass>
+                  <String fx:value="cancel-button" />
+                  <String fx:value="button" />
+               </styleClass>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+   </padding>
+</VBox>

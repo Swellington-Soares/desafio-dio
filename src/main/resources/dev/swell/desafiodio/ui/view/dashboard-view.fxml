@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="428.0" prefWidth="755.0" stylesheets="@../../../../../asserts/css/style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.swell.desafiodio.presentation.controller.DashboardViewController">
+   <children>
+      <HBox alignment="TOP_RIGHT" nodeOrientation="LEFT_TO_RIGHT">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#newTaskButtonAction" text="NOVA TAREFA" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="8.0" />
+         </VBox.margin>
+      </HBox>
+      <AnchorPane prefHeight="389.0" prefWidth="739.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <TableView fx:id="tbView" layoutX="122.0" layoutY="82.0" styleClass="table-row-cell" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="tbColumnId" editable="false" prefWidth="50.39996147155762" text="ID" />
+                <TableColumn fx:id="tbColumnTitle" editable="false" prefWidth="100.00003814697266" text="TÍTULO" />
+                  <TableColumn fx:id="tbColumnState" editable="false" prefWidth="75.0" text="SITUAÇÃO" />
+                  <TableColumn fx:id="tbColumnStartDate" editable="false" prefWidth="150.4000244140625" text="DATA DE INÍCIO" />
+                  <TableColumn fx:id="tbColumnEndDate" editable="false" prefWidth="128.79995727539062" text="DATA DE FINALIZAÇÃO" />
+                  <TableColumn fx:id="tbColumnNote" editable="false" minWidth="0.0" prefWidth="159.20001220703125" text="OBSERVAÇÃO" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</VBox>
