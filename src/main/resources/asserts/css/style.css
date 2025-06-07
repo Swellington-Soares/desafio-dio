@@ -1,0 +1,22 @@
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 6px;
+}
+
+.confirm-button {
+    -fx-background-color: green;
+}
+
+.cancel-button {
+    -fx-background-color: red;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #191717; /* Cor personalizada para linha selecionada */
+    -fx-text-fill: white;          /* Cor do texto da linha selecionada */
+}
+
+

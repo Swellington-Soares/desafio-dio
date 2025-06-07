@@ -17,6 +17,8 @@ import static java.lang.Thread.sleep;
 @SuppressWarnings("BusyWait")
 public class SplashScreenController {
 
+    private final int WAIT_TIME = 250;
+
     @FXML
     private AnchorPane root;
 
@@ -25,7 +27,6 @@ public class SplashScreenController {
 
     @FXML
     private Text progressText;
-
 
     private final List<String> progressMessages = Arrays.asList(
             "Loading resources...",
@@ -47,7 +48,7 @@ public class SplashScreenController {
                         progressText.setText(progressMessages.get(index));
                         pbProgress.setProgress((index + 1) / (double) progressMessages.size());
                     });
-                    sleep(1000);
+                    sleep(WAIT_TIME);
                 }
                 Platform.runLater(this::fadeOutAndContinue);
             } catch (Exception ignored) {}
