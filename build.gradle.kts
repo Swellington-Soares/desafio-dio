@@ -32,13 +32,12 @@ application {
 }
 
 javafx {
-    version = "17.0.6"
+    version = "17.0.15"
     modules = listOf("javafx.controls", "javafx.fxml")
 }
 
 dependencies {
-    implementation("org.controlsfx:controlsfx:11.2.1")
-    implementation("org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
@@ -58,6 +57,11 @@ dependencies {
 
     implementation("org.mapstruct:mapstruct:1.6.3")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.3")
+
+    // https://mvnrepository.com/artifact/org.jetbrains/annotations
+    implementation("org.jetbrains:annotations:26.0.2")
+
+    implementation("net.datafaker:datafaker:2.4.3")
 }
 
 tasks.withType<Test> {
