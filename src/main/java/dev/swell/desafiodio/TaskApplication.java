@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 
 public class TaskApplication extends Application {
 

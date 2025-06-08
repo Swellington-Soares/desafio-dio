@@ -1,10 +1,7 @@
 package dev.swell.desafiodio.architecture;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.Parent;
 
 public class ViewManager {
     private static final ViewManager INSTANCE = new ViewManager();

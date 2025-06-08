@@ -1,8 +1,9 @@
-package dev.swell.desafiodio.architecture.persistance;
+package dev.swell.desafiodio.architecture.persistence;
 
 import java.util.List;
 
 public interface Repository<C, Id> {
+
     C findById(Id id);
     C save(C entity);
     C update(C entity);

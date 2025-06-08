@@ -132,8 +132,7 @@ public class DashboardViewController {
     @FXML
     private void initialize() {
         prepareTable();
-        var list = getTaskList();
-        tbView.setItems(list);
+        tbView.setItems(getTaskList());
     }
 
 

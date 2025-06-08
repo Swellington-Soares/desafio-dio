@@ -1,4 +1,4 @@
-package dev.swell.desafiodio.architecture.persistance;
+package dev.swell.desafiodio.architecture.persistence;
 
-interface TaskRepository extends JpaRepository {
+interface TaskRepository  {
 }

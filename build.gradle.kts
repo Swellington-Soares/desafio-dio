@@ -4,17 +4,19 @@ plugins {
     id("org.javamodularity.moduleplugin") version "1.8.12"
     id("org.openjfx.javafxplugin") version "0.0.13"
     id("org.beryx.jlink") version "2.25.0"
+    id ("org.flywaydb.flyway") version "11.9.1"
 }
 
 group = "dev.swell"
 version = "1.0-SNAPSHOT"
 
+val flywayVersion = "11.9.1"
+val junitVersion = "5.10.2"
+val lombokVersion = "1.18.38"
+
 repositories {
     mavenCentral()
 }
-
-val junitVersion = "5.10.2"
-val lombokVersion = "1.18.38"
 
 java {
     toolchain {
@@ -35,6 +37,17 @@ javafx {
     version = "17.0.15"
     modules = listOf("javafx.controls", "javafx.fxml")
 }
+
+
+flyway {
+    url = "jdbc:mariadb://localhost:3306/bookdb"
+    user = "root"
+    password = "root"
+    schemas = arrayOf("bookdb")
+    locations = arrayOf("filesystem:src/main/resources/db/migration")
+    configurations = arrayOf("compileClasspath")
+}
+
 
 dependencies {
 
@@ -62,6 +75,8 @@ dependencies {
     implementation("org.jetbrains:annotations:26.0.2")
 
     implementation("net.datafaker:datafaker:2.4.3")
+
+    implementation("org.flywaydb:flyway-core:${flywayVersion}")
 }
 
 tasks.withType<Test> {
@@ -75,3 +90,13 @@ jlink {
         name = "app"
     }
 }
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.flywaydb:flyway-mysql:11.9.1")
+    }
+}
+
